@@ -1,0 +1,187 @@
+/*
+  Screens Stylesheet
+  Contains styles specific to individual screens.
+*/
+
+/* Login Screen */
+.login-container {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-logo {
+    font-size: var(--font-size-xlarge);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--spacing-xl);
+}
+
+.login-box {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    box-shadow: var(--box-shadow-medium);
+}
+
+.login-links {
+    margin-top: var(--spacing-lg);
+    font-size: 0.9rem;
+}
+
+/* Dashboard Screen */
+.welcome-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.recent-items {
+    margin-top: var(--spacing-xl);
+}
+
+/* Documents Screen */
+.document-search {
+    margin-bottom: var(--spacing-xl);
+}
+
+.document-upload-btn {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Document Import Screen */
+.document-details {
+    margin-top: var(--spacing-xl);
+}
+
+.document-tags {
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+/* Document Processing Screen */
+.processing-status {
+    margin-top: var(--spacing-xl);
+}
+
+.processing-steps {
+    margin-top: var(--spacing-xl);
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.step-status {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-md);
+}
+
+.step-complete {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.step-in-progress {
+    background-color: var(--gray-light);
+}
+
+.step-pending {
+    background-color: #e0e0e0;
+}
+
+.processing-info {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    color: #666;
+}
+
+/* Insights Screen */
+.insights-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.insights-filters {
+    margin-bottom: var(--spacing-xl);
+}
+
+.insights-list {
+    margin-top: var(--spacing-md);
+}
+
+/* Insights Visualization Screen */
+.visualization-controls {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Stakeholder Trends Screen */
+.trends-controls {
+    margin-bottom: var(--spacing-xl);
+}
+
+.statement-history {
+    margin-top: var(--spacing-xl);
+}
+
+/* Report Generation Screen */
+.report-section {
+    margin-top: var(--spacing-xl);
+}
+
+.template-selection {
+    margin-top: var(--spacing-md);
+}
+
+.insight-selection {
+    margin-top: var(--spacing-md);
+}
+
+.report-preview-section {
+    margin-top: var(--spacing-md);
+}
+
+/* Reports Screen */
+.reports-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.reports-filters {
+    margin-bottom: var(--spacing-xl);
+}
+
+.reports-list {
+    margin-top: var(--spacing-md);
+}
+
+/* Admin Screens */
+.admin-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.admin-description {
+    margin-bottom: var(--spacing-lg);
+}
+
+.admin-controls {
+    margin-bottom: var(--spacing-xl);
+}
+
+.tag-item {
+    margin-bottom: var(--spacing-md);
+}
+
+.error-item {
+    margin-bottom: var(--spacing-md);
+    border-left: 3px solid var(--danger);
+}

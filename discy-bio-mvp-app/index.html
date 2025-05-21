@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discy Bio MVP Demo</title>
+    <!-- Link to CSS files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/screens.css">
+</head>
+<body>
+    <!-- Main container to load screens -->
+    <div id="app-container">
+        <!-- Screens will be loaded here dynamically -->
+        <div id="screen-container"></div>
+    </div>
+
+    <!-- Navigation control (for demo purposes) -->
+    <div id="demo-controls">
+        <h3>Demo Navigation</h3>
+        <select id="screen-selector">
+            <option value="login">Login Screen</option>
+            <option value="dashboard">Dashboard</option>
+            <option value="documents">Documents</option>
+            <option value="document-import">Document Import</option>
+            <option value="document-processing">Document Processing</option>
+            <option value="insights">Insights</option>
+            <option value="insights-visualization">Insights Visualization</option>
+            <option value="stakeholder-trends">Stakeholder Trends</option>
+            <option value="report-generation">Report Generation</option>
+            <option value="reports">Reports</option>
+            <option value="admin-tags">Admin - Tag Library</option>
+            <option value="admin-errors">Admin - Error Management</option>
+        </select>
+        <button id="load-screen-btn">Load Screen</button>
+    </div>
+
+    <!-- JavaScript libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+    <!-- JavaScript files -->    
+    <script src="js/visualization.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/screens.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
