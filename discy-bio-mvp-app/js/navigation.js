@@ -89,13 +89,40 @@ function loadScreen(screenName) {
  * @param {string} screenName - The name of the current screen
  */
 function setupScreenSpecificInteractions(screenName) {
-    // Login screen interactions
+    // Login screen interactions - Enhanced for automatic login
     if (screenName === 'login') {
         const loginForm = document.querySelector('.login-form form');
+        const signInButton = document.querySelector('.login-form button[type="submit"]');
+        
         if (loginForm) {
             loginForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                loadScreen('dashboard');
+                event.preventDefault(); // Prevent actual form submission
+                
+                // Add a small loading effect (optional)
+                if (signInButton) {
+                    const originalText = signInButton.textContent;
+                    signInButton.textContent = 'Signing in...';
+                    signInButton.disabled = true;
+                    
+                    // Navigate to dashboard after a brief delay
+                    setTimeout(() => {
+                        loadScreen('dashboard');
+                    }, 500); // Half-second delay for UX
+                } else {
+                    // If no button found, navigate immediately
+                    loadScreen('dashboard');
+                }
+            });
+        }
+        
+        // Also handle direct button click if form submission doesn't work
+        if (signInButton) {
+            signInButton.addEventListener('click', function(event) {
+                // Only handle if it's not already handling form submission
+                if (event.target.type !== 'submit') {
+                    event.preventDefault();
+                    loadScreen('dashboard');
+                }
             });
         }
     }
@@ -141,30 +168,32 @@ function setupScreenSpecificInteractions(screenName) {
         }, 100);
     }
     
-    // RESTORED: Sidebar navigation
+    // Sidebar navigation (for screens that have sidebars)
     const sidebarItems = document.querySelectorAll('.sidebar-menu li');
-    sidebarItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Update active state
-            sidebarItems.forEach(li => li.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Map menu item text to screen names
-            const menuText = this.textContent.trim();
-            const screenMap = {
-                'Dashboard': 'dashboard',
-                'Reports': 'reports',
-                'Insights': 'insights',
-                'Documents': 'documents',
-                'Settings': 'admin-tags'
-            };
-            
-            // Load the corresponding screen
-            if (screenMap[menuText]) {
-                loadScreen(screenMap[menuText]);
-            }
+    if (sidebarItems.length > 0) {
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Update active state
+                sidebarItems.forEach(li => li.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Map menu item text to screen names
+                const menuText = this.textContent.trim();
+                const screenMap = {
+                    'Dashboard': 'dashboard',
+                    'Reports': 'reports',
+                    'Insights': 'insights',
+                    'Documents': 'documents',
+                    'Settings': 'admin-tags'
+                };
+                
+                // Load the corresponding screen
+                if (screenMap[menuText]) {
+                    loadScreen(screenMap[menuText]);
+                }
+            });
         });
-    });
+    }
     
     // Improved tab navigation for insights screens
     const tabs = document.querySelectorAll('.tabs .tab');

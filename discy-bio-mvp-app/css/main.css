@@ -70,50 +70,11 @@ textarea {
     resize: vertical;
 }
 
-/* Demo Controls (for navigation between screens in the demo) */
-#demo-controls {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--dark);
-    color: var(--white);
-    padding: var(--spacing-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-md);
-    z-index: 1000;
-}
-
-#demo-controls h3 {
-    color: var(--white);
-    margin: 0;
-}
-
-#screen-selector {
-    width: auto;
-    margin: 0;
-}
-
-#load-screen-btn {
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#load-screen-btn:hover {
-    background-color: var(--primary-dark);
-}
-
 /* Screen Container */
 #app-container {
     max-width: 1200px;
     margin: 2rem auto;
-    margin-bottom: 100px; /* Make room for demo controls */
+    padding: 0 1rem;
 }
 
 .screen-container {
@@ -158,6 +119,14 @@ textarea {
 /* Utility Classes */
 .text-center {
     text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.font-weight-bold {
+    font-weight: 600;
 }
 
 .mt-1 { margin-top: var(--spacing-sm); }

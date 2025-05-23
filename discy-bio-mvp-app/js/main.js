@@ -14,12 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load the default screen (login)
     loadScreen('login');
     
-    // Set up event listener for demo navigation
-    document.getElementById('load-screen-btn').addEventListener('click', function() {
-        const screenName = document.getElementById('screen-selector').value;
-        loadScreen(screenName);
-    });
-    
     // Set up event listeners for interactive components
     setupComponentInteractions();
     
